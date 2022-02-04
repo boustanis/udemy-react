@@ -1,15 +1,14 @@
 import ExpenseItem from "./ExpenseItem";
+import './Expenses.css';
 
 function Expenses(props){
-    const expenses = props.expenses.map((expense,index)=>{
-        return <ExpenseItem key={index} title={expense.title} amount={expense.amount} date={expense.date}/>
-    })
-
+    // make expenses array with <ExpenseItem> elements
+const expenses = props.expenses.map((expense,index)=>{
+    return <ExpenseItem key={index} title={expense.title} amount={expense.amount} date={expense.date}/>
+})
     return(
-        <div>
-            <div>
-                {expenses}
-            </div>
+        <div className="expenses">
+            {expenses}
         </div>
     );
 }
