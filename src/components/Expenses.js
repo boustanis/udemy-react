@@ -1,4 +1,5 @@
 import ExpenseItem from "./ExpenseItem";
+import NewExpense from "./NewExpense/NewExpense";
 import Card from './Card';
 import './Expenses.css';
 
@@ -10,6 +11,7 @@ const expenses = props.expenses.map((expense,index)=>{
     return(
         <Card className="expenses">
             {expenses}
+            <NewExpense/>
         </Card>
     );
 }
