@@ -8,10 +8,9 @@ function Expenses(props){
 
     const [selectedYear,setSelectedYear] = useState('2021');
 
-    // make expenses array with <ExpenseItem> elements
-    const expenses = props.expenses.map((expense,index)=>{
-        return <ExpenseItem key={index} title={expense.title} amount={expense.amount} date={expense.date}/>
-    });
+    // const expenses = props.expenses.map((expense,index)=>{
+    //     return <ExpenseItem key={index} title={expense.title} amount={expense.amount} date={expense.date}/>
+    // });
 
     // TO ExpenseFilter
     const filterByYear = year => {
@@ -23,7 +22,7 @@ function Expenses(props){
         <div>
             <Card className="expenses">
                 <ExpensesFilter selectedYear={selectedYear} onFilterByYear={filterByYear} />
-                {expenses}
+                {props.expenses.map(expense => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} />)}
             </Card>
         </div>
     );
