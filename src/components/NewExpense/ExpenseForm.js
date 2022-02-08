@@ -72,6 +72,8 @@ const ExpenseForm = (props) => {
 
         
         // console.log(expenseData);
+
+        // FROM Expenses
         props.onSaveExpenseData(expenseData);
 
         setEnteredTitle('');
