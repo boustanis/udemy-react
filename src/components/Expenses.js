@@ -22,7 +22,10 @@ function Expenses(props){
         <div>
             <Card className="expenses">
                 <ExpensesFilter selectedYear={selectedYear} onFilterByYear={filterByYear} />
-                {props.expenses.map(expense => <ExpenseItem title={expense.title} amount={expense.amount} date={expense.date} />)}
+                {props.items.map((expense,index)=>{
+                    return <ExpenseItem key={index} title={expense.title} amount={expense.amount} date={expense.date}/>
+                })}
+                {console.log(props.items[0].title)}
             </Card>
         </div>
     );
